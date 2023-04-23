@@ -7,10 +7,7 @@ class MapquestService
   private
 
   def get_url(url)
-    response = conn.get(url) do |req|
-      req.headers['Content-Type'] = 'application/json'
-      req.headers['Accept'] = 'application/json'
-    end
+    response = conn.get(url) 
     JSON.parse(response.body, symbolize_names: true)
   end
 
@@ -19,5 +16,4 @@ class MapquestService
       req.params['key'] = ENV['MAPQUEST_API_KEY']
     end
   end
-
 end

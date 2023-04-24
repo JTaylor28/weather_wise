@@ -14,7 +14,7 @@ class WeatherFacade
       humidity: response[:current][:humidity],
       uvi: response[:current][:uv],
       visibility: response[:current][:vis_miles],
-      conditions: response[:current][:condition][:text],
+      condition: response[:current][:condition][:text],
       icon: response[:current][:condition][:icon]
     }
 

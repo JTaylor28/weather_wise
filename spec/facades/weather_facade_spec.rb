@@ -18,7 +18,7 @@ RSpec.describe WeatherFacade, type: :facade do
         expect(results.current_weather[:humidity]).to eq(50)
         expect(results.current_weather[:uvi]).to eq(1.0)
         expect(results.current_weather[:visibility]).to eq(9.0)
-        expect(results.current_weather[:conditions]).to eq("Partly cloudy")
+        expect(results.current_weather[:condition]).to eq("Partly cloudy")
         expect(results.current_weather[:icon]).to eq("//cdn.weatherapi.com/weather/64x64/night/116.png")
       end
     end

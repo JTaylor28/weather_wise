@@ -6,7 +6,7 @@ class WeatherFacade
   end
 
   def find_five_day_weather
-    response = @service.get_five_day_weather(@coordinates)
+    response = @service.get_five_day_weather(@location)
     current_weather = {
       last_updated: response[:current][:last_updated],
       temperature: response[:current][:temp_f],

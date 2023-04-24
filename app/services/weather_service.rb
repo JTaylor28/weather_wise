@@ -1,9 +1,9 @@
-class MapquestService
+class WeatherService
 
-  def get_lat_long(location)
-    get_url("address?location=#{location}")
+  def get_five_day_weather(coordinates)
+    get_url("forecast.json?q=#{coordinates[:lat]},#{coordinates[:lng]}&days=5")
   end
-
+  
   private
 
   def get_url(url)
@@ -15,9 +15,8 @@ class MapquestService
   end
 
   def conn
-    Faraday.new(url: 'http://www.mapquestapi.com/geocoding/v1/') do |req|
-      req.params['key'] = ENV['MAPQUEST_API_KEY']
+    Faraday.new(url: 'http://api.weatherapi.com/v1') do |req|
+      req.params['key'] = ENV['WEATHER_API_KEY']
     end
   end
-
 end

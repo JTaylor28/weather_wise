@@ -1,7 +1,7 @@
 class WeatherFacade
   
   def initialize(coordinates)
-    @coordinates = coordinates[:results].first[:locations].first[:latLng]
+    @location = coordinates[:results].first[:locations].first[:latLng]
     @service = WeatherService.new
   end
 

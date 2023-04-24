@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Weather Request" do
+RSpec.describe "Forecast Request" do
   describe "GET /api/v0/forecast" do
     it " gets forecasts for a given location " do
       VCR.use_cassette("weather_request") do

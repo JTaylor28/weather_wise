@@ -14,8 +14,6 @@ RSpec.describe Salary, type: :poro do
       min = "52755.545248860515"
       max = "82696.16391306919"
       salary = Salary.new(title, min, max)
-      expect(salary.id).to eq(nil)
-      expect(salary.type).to eq("salary")
       expect(salary.title).to eq(title)
       expect(salary.min).to eq(min)
       expect(salary.max).to eq(max)

@@ -5,12 +5,12 @@ class ActivitySerializer
         id: 'null',
         type: 'activities',
         attributes: {
-          destination: resource[:destination],
+          destination: resource.destination,
           forecast: {
-            summary: resource[:forecast][:summary],
-            temperature: resource[:forecast][:temperature]
+            summary: resource.forecast[:summary],
+            temperature: resource.forecast[:temperature]
           },
-          activities: format_activities(resource[:activities])
+          activities: format_activities(resource.activities)
         }
       }
     }
@@ -19,10 +19,10 @@ class ActivitySerializer
   def self.format_activities(activity)
     activity.map do |a|
       
-     a.activity = {
-      type: s.type,
-      participants: s.participants,
-      price: s.price
+     a[:activity] = {
+      type: a[:type],
+      participants: a[:participants],
+      price: a[:price]
       }
     end
   end

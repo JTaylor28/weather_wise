@@ -20,7 +20,6 @@ RSpec.describe "/api/vo/users", type: :request do
         expect(parsed[:data][:attributes].keys).to eq([:email, :api_key])
         expect(parsed[:data][:attributes][:email]).to eq("email@email.com")
         expect(parsed[:data][:attributes][:api_key]).to be_a(String)
-        require 'pry'; binding.pry
       end
     end
 

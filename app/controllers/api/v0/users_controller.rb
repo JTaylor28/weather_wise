@@ -11,7 +11,7 @@ class Api::V0::UsersController < ApplicationController
       new_user.update(api_key: api_key)
       render json: UsersSerializer.new(new_user), status: 201
     else
-      render json: ErrorSerializer.new("invalid credentials").bad_request, status: 404
+      render json: ErrorSerializer.new("invalid credentials").invalid_request, status: 404
     end
   end
 
@@ -19,7 +19,7 @@ class Api::V0::UsersController < ApplicationController
 
   def check_for_nil_params
     if params[:email].nil? || params[:password].nil? || params[:password_confirmation].nil? || params[:password] != params[:password_confirmation]
-      render json: ErrorSerializer.new("invalid credentials").bad_request, status: 404
+      render json: ErrorSerializer.new("invalid credentials").invalid_request, status: 404
     end
   end
 

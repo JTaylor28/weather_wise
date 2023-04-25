@@ -1,7 +1,7 @@
 class ActivityService
 
-  def get_activities(city)
-    get_url("activities?city=#{city}")
+  def get_activities(type)
+    get_url("activity?type=#{type}")
   end
 
 
@@ -16,7 +16,7 @@ class ActivityService
   end
 
   def conn
-    Faraday.new(url: "https://boardapi.com/api/")
+    Faraday.new(url: "http://www.boredapi.com/api")
   end
 
 end

@@ -7,9 +7,8 @@ RSpec.describe "/api/vo/users", type: :request do
         user_params = { email: "email@email.com", password: "goodpassword", password_confirmation: "goodpassword"}
         headers = { "CONTENT_TYPE" => "application/json" }
         post "/api/v0/users", headers: headers, params: JSON.generate(user_params)
-
         expect(response).to have_http_status(201)
-
+        
         parsed = JSON.parse(response.body, symbolize_names: true)
         expect(parsed).to be_a(Hash)
         expect(parsed[:data]).to be_a(Hash)

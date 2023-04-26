@@ -26,7 +26,7 @@ RSpec.describe "Roadtrip Facade" do
       expect(roadtrip).to be_a(Roadtrip)
       expect(roadtrip.start_city).to eq(origin)
       expect(roadtrip.end_city).to eq(destination)
-      expect(roadtrip.travel_time).to eq("We are unable to route with the given locations.")
+      expect(roadtrip.travel_time).to eq("impossible")
       expect(roadtrip.weather_at_eta).to eq({})
     end
   end

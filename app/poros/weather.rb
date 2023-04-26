@@ -5,6 +5,7 @@ class Weather
                 :current_weather, 
                 :daily_weather, 
                 :hourly_weather
+                
   def initialize(current_weather, daily_weather, hourly_weather)
     @id = nil
     @type = "forecast"

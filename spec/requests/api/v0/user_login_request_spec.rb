@@ -5,7 +5,6 @@ RSpec.describe "/api/vo/sessions", type: :request do
     context "When successful" do
       it "logs in an existing user" do
         user = User.create( email: "whatever@example.com", password: "password", password_confirmation: "password")
-
         login_params = { email: "whatever@example.com", password: "password" }
         headers = { "CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json" }
         post "/api/v0/sessions", headers: headers, params: JSON.generate(login_params)

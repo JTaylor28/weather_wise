@@ -3,7 +3,7 @@ class WeatherService
   def get_five_day_weather(coordinates)
     get_url("forecast.json?q=#{coordinates[:lat]},#{coordinates[:lng]}&days=5")
   end
-  
+
   private
 
   def get_url(url)
